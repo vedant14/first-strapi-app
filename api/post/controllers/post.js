@@ -36,8 +36,7 @@ module.exports = {
 
     async update(ctx) {
         const { id } = ctx.params;
-        const {user} = ctx.state
-
+        const { user } = ctx.state;
 
         let entity;
         if (ctx.is("multipart")) {
@@ -61,5 +60,5 @@ module.exports = {
             author: user.id,
         });
         return sanitizeEntity(entity, { model: strapi.models.post });
-    }
+    },
 };
